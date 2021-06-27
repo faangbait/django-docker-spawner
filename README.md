@@ -15,6 +15,7 @@ For more information about my external network so you can configure this command
 - This step (or a similar ipvlan) step is required, so that all django instances are served on port 80.
 
 1. Clone/cd into the repo
-2. Run ./start_project.sh
-3. Enter the project name; will become the folder name in this directory. Keep it simple; no spaces.
+2. Probably edit docker-compose.yaml's postgres volume unless you're also /home/ss/
+3. Run ./start_project.sh
+4. Enter the project name; will become the folder name in this directory. Keep it simple; no spaces.
 
