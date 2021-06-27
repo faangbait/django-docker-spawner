@@ -1,0 +1,20 @@
+version: "3.5"
+   
+networks:
+  default:
+    external: true
+    name: dockernet
+
+services:
+  postgresql:
+    image: postgres
+    container_name: postgresql_dev
+    volumes:
+      - $USER/.docker/config/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=devpass
+    networks:
+      default:
+
