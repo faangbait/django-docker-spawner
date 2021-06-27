@@ -18,3 +18,4 @@ echo "      default:" >> docker-compose.yaml
 
 sudo docker-compose run "$PROJNAME" django-admin startproject "$PROJNAME" .
 sudo chown -R $USER:$USER .
+docker-compose up -d
