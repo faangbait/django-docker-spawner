@@ -10,7 +10,7 @@ services:
     image: postgres
     container_name: postgresql_dev
     volumes:
-      - $USER/.docker/config/postgres:/var/lib/postgresql/data
+      - /home/ss/.docker/config/postgres:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
