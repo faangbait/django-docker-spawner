@@ -13,6 +13,7 @@ echo "    ports:" >> docker-compose.yaml
 echo "      - \"80:80\"" >> docker-compose.yaml
 echo "    depends_on:" >> docker-compose.yaml
 echo "      - postgresql" >> docker-compose.yaml
+echo "    restart: unless-stopped" >> docker-compose.yaml
 echo "    networks:" >> docker-compose.yaml
 echo "      default:" >> docker-compose.yaml
 
