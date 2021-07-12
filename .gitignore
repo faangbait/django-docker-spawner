@@ -1,0 +1,5 @@
+*
+!.gitignore
+!README.md
+!newproject.tar.gz
+!start_project.sh
