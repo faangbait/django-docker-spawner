@@ -4,6 +4,11 @@
 
 ```docker network create -d ipvlan --subnet=10.0.3.0/24 --gateway=10.0.3.1 -o parent=eno2 dockernet```
 
+```
+[slightly more tasteful version]
+docker network create -d ipvlan --subnet=10.0.10.0/24 --gateway=10.0.10.1 -o parent=eno2.10 dockernet
+```
+
 ```docker run --net=dockernet --options```
 
 This will make sure that each django instance is accessible at its own IP address (e.g. 10.0.3.2, 10.0.3.3)
