@@ -19,6 +19,22 @@
   
 [after these steps, everything should be pingable from everywhere else]
 
+[static ip addressing in docker-compose; top level key]
+networks:
+  default:
+    external:
+      name: dockernet
+  dockernet:
+    external: true
+
+services:
+  traefik:
+    image: "traefik:v2.5"
+    networks:
+      dockernet:
+        ipv4_address: 10.0.10.250
+    container_name: "traefik"
+
 ```
 
 ```docker run --net=dockernet --options```
