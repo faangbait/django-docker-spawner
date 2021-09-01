@@ -5,10 +5,19 @@
 ```docker network create -d ipvlan --subnet=10.0.3.0/24 --gateway=10.0.3.1 -o parent=eno2 dockernet```
 
 ```
-[slightly more tasteful version]
+[slightly more tasteful version with vlan support]
+
 ip link add link eno2 name eno2.10 type vlan id 10
 ip link set up eno2.10
 docker network create -d ipvlan --subnet=10.0.10.0/24 --gateway=10.0.10.1 -o parent=eno2.10 dockernet
+
+[also requires switch configuration]
+edgeos example:
+
+Add VLAN Interface >
+VLAN_ID: 10
+Interface: eth2
+Address: 10.0.10.1/24
 
 ```
 
