@@ -7,7 +7,7 @@
 ```
 [slightly more tasteful version with vlan support]
 
-  ip link add link eno2 name eno2.10 type vlan id 10
+  ip link add link eno2 name eno2.10 type vlan id 10 # these are test commands; migrate this to /etc/network/interfaces
   ip link set up eno2.10
   docker network create -d ipvlan --subnet=10.0.10.0/24 --gateway=10.0.10.1 -o parent=eno2.10 dockernet
 
