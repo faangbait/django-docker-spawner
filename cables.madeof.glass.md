@@ -1,4 +1,13 @@
-# more advanced routing documentation
+# more advanced django/microservices routing documentation
+
+The goal of this documentation is to expand on the generic django spawner to provide multiple vlanned subnets. The goal is to establish Traefik as a reverse proxy to serve content out of multiple docker-compose stacks that can't speak to each other.
+
+In a perfect world, the architecture of this would look similar to:
+
+- A traefik proxy providing REST API and other frontend services for users
+- Internal developer-oriented stacks that are still ip accessible from inside the LAN, but would NOT be accessible over Traefik. For instance, a HashiCorp vault for keeping secrets or certificate stores.
+- Specific backend stacks to support each of the front-end microservices. For example, a compose file launching django, nginx, redis, postgres. This microservice compose stack would be entirely isolated from a second microservice compose stack, even if the second stack also was django/nginx/redis/postgres.
+
 
 ```
 [slightly more tasteful version with vlan support]
