@@ -83,12 +83,12 @@ iface eno2.10 inet static
 Once the vlans are established, docker starts to not behave like a dick when you create networks for them.
 
 ```
-docker network create -d ipvlan --subnet=10.0.10.0/24 --gateway=10.0.10.1 -o parent=eno2.10 frontend
-docker network create -d ipvlan --subnet=10.0.20.0/24 --gateway=10.0.20.1 -o parent=eno2.20 backend
-docker network create -d ipvlan --subnet=10.0.30.0/24 --gateway=10.0.30.1 -o parent=eno2.30 foobar-stack
+docker network create -d ipvlan --subnet=10.0.10.0/24 --gateway=10.0.10.254 -o parent=eno2.10 -o ipvlan_mode=l3 frontend
+docker network create -d ipvlan --subnet=10.0.20.0/24 --gateway=10.0.20.254 -o parent=eno2.20 -o ipvlan_mode=l3 backend
+docker network create -d ipvlan --subnet=10.0.30.0/24 --gateway=10.0.30.254 -o parent=eno2.30 -o ipvlan_mode=l3 foobar-stack
 ```
 
-For a compose stack like the .30 example, your compose.yml file might look like the following:
+For an isolated compose stack like the .30 example, your compose.yml file might look like the following:
 
 ```
 networks:
