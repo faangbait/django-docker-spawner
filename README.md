@@ -28,6 +28,3 @@ For more information about my external network so you can customize this command
 2. Probably edit my docker-compose.yaml's postgres volume unless you're also /home/ss/
 3. Run ./start_project.sh
 4. Enter the project name; it will become the folder name in this directory. Keep it simple; no spaces.
-
-## Advanced networking stacks - isolation of frontend/backend - vlans
-Instructions split off into cables.madeof.glass.md because this gets complicated
